@@ -1,0 +1,27 @@
+{% if product.variants.size > 1 %}
+  <div class="product-variants">
+    {% for option in product.options_with_values %}
+      <div class="product-variants__option">
+        <label for="Option-{{ section.id }}-{{ forloop.index0 }}">
+          {{ option.name }}
+        </label>
+        <select
+          id="Option-{{ section.id }}-{{ forloop.index0 }}"
+          class="variant-selector"
+          data-index="option{{ forloop.index }}"
+        >
+          {% for value in option.values %}
+            <option
+              value="{{ value | escape }}"
+              {% if option.selected_value == value %}
+                selected="selected"
+              {% endif %}
+            >
+              {{ value }}
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
