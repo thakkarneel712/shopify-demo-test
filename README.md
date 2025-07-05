@@ -20,9 +20,10 @@ This project demonstrates a custom product page built using Shopify Online Store
   - Semantic HTML5 structure
   - Sections + Blocks architecture
 
-# Main File
--pdp-custom.liquid
--product-price.liquid
--product-variants.liquid
--product.css
--product.js
+- **Main File**:
+  - pdp-custom.liquid
+  - product-price.liquid
+  - product-variants.liquid
+  - product.css
+  - product.js
+
