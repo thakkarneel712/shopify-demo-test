@@ -19,3 +19,10 @@ This project demonstrates a custom product page built using Shopify Online Store
   - Responsive design (mobile-first approach)
   - Semantic HTML5 structure
   - Sections + Blocks architecture
+
+# Main File
+-pdp-custom.liquid
+-product-price.liquid
+-product-variants.liquid
+-product.css
+-product.js
