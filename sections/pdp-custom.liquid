@@ -522,12 +522,7 @@
             {% when 'price' %}
               <div class="product__price-wrapper" {{ block.shopify_attributes }}>
                 <div class="product__price" id="price-{{ section.id }}">
-                  {%
-                    render 'product-price',
-                    product: product,
-                    show_compare_at_price: block.settings.show_compare_at_price,
-                    price_id: 'price-' | append: section.id
-                  %}
+                  {% render 'product-price', product: product, show_compare_at_price: block.settings.show_compare_at_price, price_id: 'price-', append: section.id %}
                 </div>
 
                 {%- if block.settings.show_tax_notice -%}
@@ -696,3 +691,20 @@
     </div>
   </div>
 {% endform %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%
+                        render 'product-price',
+                        product: product,
+                        show_compare_at_price: block.settings.show_compare_at_price,
+                        price_id: 'price-' | append: section.id
+                      %}
+  to: "{% render 'product-price', product: product, show_compare_at_price: block.settings.show_compare_at_price,
+    price_id: 'price-', append: section.id %}"
+  position: 15424..15571
+{% endcomment %}
